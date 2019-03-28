@@ -27,7 +27,7 @@
       <input type="text" id="villain-input"><br>
 
       <!-- Button triggers new villain to be added -->
-      <input id="add-villain" type="submit" value="Add a villain, Yo!">
+      <input id="add-villain" type="submit" value="Add a villain, M'Boogie!">
       <div id="gifs-appear-here">
 
     </form>
@@ -35,7 +35,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
       // Initial array of villains
-      var villains = ["Cobra Commander", "Thanos", "Mr. Glass", "The Joker", "Dr. Doom", "Putin", "Syndrome", "Skeletor", "Darth Vader"];
+      var villains = ["Cobra Commander", "Thanos", "Mr. Glass", "The Joker", "Dr. Doom", "Sauron", "Putin", "Syndrome", "Skeletor", "The Janitor", "Darth Vader"];
 
       // Function for displaying villain data
       function renderButtons() {
@@ -117,7 +117,11 @@
                         // Giving the image tag an src attribute of a proprty pulled off the
                         // result item
                         villainImage.attr("src", results[i].images.fixed_height.url);
+                        villainImage.attr("data-still", results[i].images.fixed_height.url);
+                        villainImage.attr("data-animate", results[i].images.fixed_height.url);
+                        villainImage.attr("data-state", still);
 
+                        villainImage.addClass("gif")
                         // Appending the paragraph and villainImage we created to the "gifDiv" div we created
                         gifDiv.append(p);
                         gifDiv.append(villainImage);
