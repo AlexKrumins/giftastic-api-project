@@ -1,5 +1,5 @@
 // Initial array of villains
-  var villains = ["Cobra Commander", "Thanos", "Mr. Glass", "The Joker", "Dr. Doom", "Sauron", "Putin", "Syndrome", "Skeletor", "The Janitor", "Darth Vader"];
+  var villains = ["Cobra Commander", "Thanos", "Ice King", "The Joker", "Dr. Doom", "Sauron", "Putin", "Syndrome", "Skeletor", "The Janitor", "Darth Vader"];
   // Function for displaying villain data
   function renderButtons() {
   // (this is necessary otherwise we will have repeat buttons)
@@ -68,9 +68,11 @@ $(document).on("click", ".villain", function(){
 
           // Storing the result item's rating
           var rating = results[i].rating;
+          var title = results[i].title;
 
           // Creating a paragraph tag with the result item's rating
           var p = $("<p>").text("Rating: " + rating);
+          var t = $("<p>").text("Title: " + title);
 
           // Creating an image tag
           var villainImage = $("<img>");
@@ -85,6 +87,7 @@ $(document).on("click", ".villain", function(){
           // Appending the paragraph and villainImage we created to the "gifDiv" div we created
           gifDiv.append(p);
           gifDiv.append(villainImage);
+          gifDiv.append(t);
 
           // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
           $("#gifs-appear-here").prepend(gifDiv);
