@@ -1,41 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>Favorite villains</title>
-  <style type="text/css">
-    button,
-    div,
-    form,
-    input {
-      margin: 10px;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
-
   <div class="container">
     <h1>Villain Search</h1>
-
-     <!-- Rendered Buttons will get Dumped Here  -->
     <div id="buttons-view"></div>
-
     <form id="villain-form">
       <label for="villain-input">Type in your own villain, M'Boogie!</label>
       <input type="text" id="villain-input"><br>
-
-      <!-- Button triggers new villain to be added -->
       <input id="add-villain" type="submit" value="Click here to add a villain, M'Boogie!">
       <input id="clear-villain" type="submit" value="Click here to remove your buttons!">
       <div id="gifs-appear-here">
-
     </form>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
   </div>
 </body>
-
 </html>

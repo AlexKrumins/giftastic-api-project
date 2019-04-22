@@ -1,6 +1,6 @@
 // Initial array of villains
 var villains = [];
-var originalvillains = ["Thanos", "Cersei Lannister", "Ice King", "The Joker", "O-Ren Ishii", "Sauron", "Putin", "Ursula", "Skeletor", "The Janitor", "Darth Vader"];
+var originalvillains = ["Thanos", "Cersei Lannister", "Ice King", "The Joker", "O-Ren Ishii", "Sauron", "Putin", "Ursula", "Skeletor", "The Janitor", "Darth Vader", "Xenomorph"];
 //This will store any buttons added by the user
 var previouslyAddedVillains = [];
 
@@ -20,10 +20,8 @@ function renderButtons() {
   // (this is necessary otherwise we will have repeat buttons)
   $("#buttons-view").empty();
   villains = originalvillains.concat(previouslyAddedVillains);
-  
   // Looping through the array of villains
   for (var i = 0; i < villains.length; i++) {
-    
     // Then dynamicaly generating buttons for each villain in the array
     // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
     var a = $("<button>");
@@ -37,7 +35,6 @@ function renderButtons() {
     $("#buttons-view").append(a);
   };
 };
-
 //Function for user to add buttons
 $("#add-villain").on("click", function(event) {
   // Preventing the buttons default behavior when clicked (which is submitting a form)
@@ -62,7 +59,6 @@ $("#clear-villain").on("click", function(event){
   localStorage.clear();
   renderButtons();
 })
-
 // Function for displaying the villain info
 // We're adding a click event listener to all elements with the class "villain"
 // We're adding the event listener to the document because it will work for dynamically generated elements
@@ -83,23 +79,18 @@ $(document).on("click", ".villain", function(){
     console.log(results);
     // Looping over every result item
     for (var i = 0; i < results.length; i++) {
-      
       // Only taking action if the photo has an appropriate rating
       if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
         // Creating a div for the gif
         var gifDiv = $("<div>");
-        
         // Storing the result item's rating
         var rating = results[i].rating;
         var title = results[i].title;
-        
         // Creating a paragraph tag with the result item's rating
         var p = $("<p>").text("Rating: " + rating);
         var t = $("<p>").text("Title: " + title);
-        
         // Creating an image tag
         var villainImage = $("<img>");
-        
         // Giving the image tag an src attribute of a proprty pulled off the
         // result item
         villainImage.attr("src", results[i].images.fixed_height_still.url);
@@ -111,7 +102,6 @@ $(document).on("click", ".villain", function(){
         gifDiv.append(p);
         gifDiv.append(villainImage);
         gifDiv.append(t);
-        
         // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
         $("#gifs-appear-here").prepend(gifDiv);
       };
@@ -133,6 +123,5 @@ $(document).on("click", ".gif", function() {
   };
 });
 // Calling the renderButtons and retrieveData functions to display the intial buttons
-
 retrieveData();
 renderButtons(); 
