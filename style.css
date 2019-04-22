@@ -1,0 +1,10 @@
+button,
+div,
+form,
+input {
+  margin: 10px;
+}
+body{
+    background-image:url(cheap_diagonal_fabric.png);
+    font-family: Baloo Chettan, cursive;
+}
